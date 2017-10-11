@@ -1,0 +1,11 @@
+version: "2"
+services:
+  mongodb:
+    image: mongo:3.4.4
+  node:
+    image: node:7
+    build: ./node
+    ports:
+    - "3000:3000"
+    depends_on:
+    - mongodb
