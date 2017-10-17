@@ -3,14 +3,14 @@ services:
   mongodb:
     image: mongo:3.4.4
   node:
-    image: node:7
+    image: server
     build: ./node
     ports:
     - "3000:3000"
     depends_on:
     - mongodb
   nginx:
-    image: nginx
+    image: frontend
     build: ./nginx
     ports:
       - "8080:8080"
