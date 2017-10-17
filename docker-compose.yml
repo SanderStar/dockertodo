@@ -9,3 +9,8 @@ services:
     - "3000:3000"
     depends_on:
     - mongodb
+  nginx:
+    image: nginx
+    build: ./nginx
+    depends_on:
+      - node
