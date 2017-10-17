@@ -12,5 +12,7 @@ services:
   nginx:
     image: nginx
     build: ./nginx
+    ports:
+      - "8080:8080"
     depends_on:
       - node
