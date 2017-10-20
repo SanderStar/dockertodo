@@ -5,6 +5,8 @@ COPY requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt \
     && rm -rf /tmp/requirements.txt
 
+COPY templates ./templates
+
 COPY ./todo.py ./
 
 EXPOSE 5000
