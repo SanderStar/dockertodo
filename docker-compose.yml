@@ -3,10 +3,14 @@ services:
   mongodb:
     image: mongo:3.4.4
   nodeapp:
-    image: server
+    image: nodeserver
     build: ./node
     ports:
     - "3000:3000"
+  pyapp:
+    build: ./python
+    ports:
+      - "5000:5000"
   nginx:
     image: ningx
     build: ./nginx
@@ -15,8 +19,3 @@ services:
     depends_on:
       - nodeapp
       - pyapp
-  pyapp:
-    image: python:3
-    build: ./python
-    ports:
-      - "5000:5000"
