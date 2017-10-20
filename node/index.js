@@ -21,6 +21,7 @@ app.post('/todo.js/new', (req, res) => {
     tododb.insertOne(req.body).then(() => res.redirect('/todo.js'))
 })
 
+// the second mongodb refers to the mongodb definition in the docker-compose.yml
 MongoClient.connect('mongodb://mongodb:27017/tododb')
 	// tzt
     .then(db => {
