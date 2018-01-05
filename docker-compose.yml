@@ -5,12 +5,14 @@ services:
   nodeapp:
     image: nodeserver
     build: ./node
-    ports:
-    - "3000:3000"
+# not needed
+#    ports:
+#    - "3000:3000"
   pyapp:
     build: ./python
-    ports:
-      - "5000:5000"
+# not needed
+#    ports:
+#      - "5000:5000"
   nginx:
     image: ningx
     build: ./nginx
