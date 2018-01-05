@@ -8,6 +8,7 @@ Vagrant.configure(2) do |config|
     vbox.memory = 1024
     vbox.cpus = 2
     vbox.customize ["modifyvm", :id, "--ioapic", "on"]
+    vbox.name = "dockertodo"
   end
 
 end
