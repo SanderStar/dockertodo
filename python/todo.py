@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def newitem():
     # Toevoegen in database
     data = [{ "name": name, "description": description}]
     app.mongo.tododb.insert(data)
-    return redirect("/todo.py")
+    return redirect(url_for("todo"))
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=False)
